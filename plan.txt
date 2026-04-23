@@ -1,0 +1,20 @@
+funkcje:
+- dodawanie zadań 
+- odhaczanie zadań (w dwie strony)
+- usuwanie zadań
+- ustawianie priorytetytowych zadań 
+- edytowanie zadań 
+- filtrowanie zadań po nazwie, dacie do wykonania, statusie, priorytecie 
+
+ewentualnie:
+- kategorie zadań
+
+
+
+
+
+
+technologie:
+- json - zapisywanie zadań z numerem id, nazwą, opisem, czy zadanie wykonane, czy zadanie priorytetowe, data deadline'u 
+- C# - backend
+- Forms C# - GUI
