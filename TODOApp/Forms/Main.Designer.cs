@@ -43,7 +43,7 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            titleLabel.Location = new Point(24, 33);
+            titleLabel.Location = new Point(12, 9);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(201, 54);
             titleLabel.TabIndex = 0;
@@ -52,7 +52,7 @@
             // addTaskButton
             // 
             addTaskButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            addTaskButton.Location = new Point(24, 90);
+            addTaskButton.Location = new Point(12, 66);
             addTaskButton.Name = "addTaskButton";
             addTaskButton.Size = new Size(168, 39);
             addTaskButton.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             tasksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tasksDataGridView.Columns.AddRange(new DataGridViewColumn[] { taskName, Description, Status, Priority, dueDate });
-            tasksDataGridView.Location = new Point(24, 135);
+            tasksDataGridView.Location = new Point(12, 111);
             tasksDataGridView.Name = "tasksDataGridView";
             tasksDataGridView.RowHeadersWidth = 51;
             tasksDataGridView.Size = new Size(1230, 456);
@@ -108,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1296, 629);
+            ClientSize = new Size(1262, 588);
             Controls.Add(tasksDataGridView);
             Controls.Add(addTaskButton);
             Controls.Add(titleLabel);
