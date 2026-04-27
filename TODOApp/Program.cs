@@ -2,6 +2,15 @@ using TODOApp.Forms;
 
 namespace TODOApp
 {
+    public class Task
+    {
+        public string? Name;
+        public string? Description;
+        public DateTime? DueDate;
+        public bool? Status;
+        public bool? Priority;
+    }
+
     internal static class Program
     {
         /// <summary>

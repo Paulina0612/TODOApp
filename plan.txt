@@ -18,3 +18,20 @@ technologie:
 - json - zapisywanie zadań z numerem id, nazwą, opisem, czy zadanie wykonane, czy zadanie priorytetowe, data deadline'u 
 - C# - backend
 - Forms C# - GUI
+
+
+
+
+do zrobienia:
+- design 					v
+- struktura jsona 				v
+- funkcjonalność okna Main
+	- wyświetlanie zadań z jsona
+	- funkcjonalność przycisku Add A Task
+	- filtrowanie
+- funkcjonalność okna AddTask
+	- uzupełnianie danych
+	- funkcjonalność przycisku Add
+	- funkcjonalność przycisku Cancel 
+
+
