@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Resources;
 using System.Text;
 using System.Text.Json;
@@ -39,6 +40,7 @@ namespace TODOApp.Forms
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                         if (task != null)
                         {
+                            CultureInfo ci = new CultureInfo("en-US");
 #pragma warning disable CS8604 // Possible null reference argument.
                             this.tasksDataGridView.Rows.Add
                                 (
@@ -46,7 +48,7 @@ namespace TODOApp.Forms
                                     task?.Description,
                                     task?.Status,
                                     task?.Priority,
-                                    task?.DueDate
+                                    task?.DueDate?.ToString("MMMM dd yyyy", ci)
                                 );
 #pragma warning restore CS8604 // Possible null reference argument.
                         }
