@@ -38,7 +38,7 @@ namespace TODOApp.Forms
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
                         Task? task = JsonConvert.DeserializeObject<Task>(jobject[id.ToString()].ToString());
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
-                        
+
 
                         if (task != null)
                         {
@@ -57,6 +57,12 @@ namespace TODOApp.Forms
                     }
                 }
             }
+        }
+
+        private void addTaskButton_Click(object sender, EventArgs e)
+        {
+            var addTaskForm = new AddTaskForm();
+            addTaskForm.ShowDialog();
         }
     }
 }

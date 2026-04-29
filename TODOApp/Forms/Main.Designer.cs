@@ -59,6 +59,7 @@
             addTaskButton.TabIndex = 1;
             addTaskButton.Text = "Add A Task";
             addTaskButton.UseVisualStyleBackColor = true;
+            addTaskButton.Click += addTaskButton_Click;
             // 
             // tasksDataGridView
             // 
