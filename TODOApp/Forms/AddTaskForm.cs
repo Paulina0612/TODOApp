@@ -14,5 +14,11 @@ namespace TODOApp.Forms
         {
             InitializeComponent();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Program.mainForm.FillData();
+        }
     }
 }

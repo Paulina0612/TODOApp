@@ -22,8 +22,10 @@ namespace TODOApp.Forms
             FillData();
         }
 
-        private void FillData()
+        public void FillData()
         {
+            this.tasksDataGridView.Rows.Clear();
+
             StreamReader r = new StreamReader("tasks.json");
             string json = r.ReadToEnd();
             var jobject = JObject.Parse(json);
