@@ -33,9 +33,10 @@
             tasksDataGridView = new DataGridView();
             taskName = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Priority = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewCheckBoxColumn();
+            Priority = new DataGridViewCheckBoxColumn();
             dueDate = new DataGridViewTextBoxColumn();
+            editTask = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -62,11 +63,11 @@
             // tasksDataGridView
             // 
             tasksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tasksDataGridView.Columns.AddRange(new DataGridViewColumn[] { taskName, Description, Status, Priority, dueDate });
+            tasksDataGridView.Columns.AddRange(new DataGridViewColumn[] { taskName, Description, Status, Priority, dueDate, editTask });
             tasksDataGridView.Location = new Point(12, 111);
             tasksDataGridView.Name = "tasksDataGridView";
             tasksDataGridView.RowHeadersWidth = 51;
-            tasksDataGridView.Size = new Size(1230, 456);
+            tasksDataGridView.Size = new Size(1204, 456);
             tasksDataGridView.TabIndex = 2;
             // 
             // taskName
@@ -74,7 +75,7 @@
             taskName.HeaderText = "Task";
             taskName.MinimumWidth = 6;
             taskName.Name = "taskName";
-            taskName.Width = 350;
+            taskName.Width = 250;
             // 
             // Description
             // 
@@ -88,6 +89,8 @@
             Status.HeaderText = "Status";
             Status.MinimumWidth = 6;
             Status.Name = "Status";
+            Status.Resizable = DataGridViewTriState.True;
+            Status.SortMode = DataGridViewColumnSortMode.Automatic;
             Status.Width = 75;
             // 
             // Priority
@@ -95,6 +98,8 @@
             Priority.HeaderText = "Priority";
             Priority.MinimumWidth = 6;
             Priority.Name = "Priority";
+            Priority.Resizable = DataGridViewTriState.True;
+            Priority.SortMode = DataGridViewColumnSortMode.Automatic;
             Priority.Width = 75;
             // 
             // dueDate
@@ -104,11 +109,21 @@
             dueDate.Name = "dueDate";
             dueDate.Width = 125;
             // 
+            // editTask
+            // 
+            editTask.HeaderText = "";
+            editTask.MinimumWidth = 6;
+            editTask.Name = "editTask";
+            editTask.Resizable = DataGridViewTriState.True;
+            editTask.SortMode = DataGridViewColumnSortMode.Automatic;
+            editTask.Text = "";
+            editTask.Width = 75;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 588);
+            ClientSize = new Size(1231, 588);
             Controls.Add(tasksDataGridView);
             Controls.Add(addTaskButton);
             Controls.Add(titleLabel);
@@ -126,8 +141,9 @@
         private DataGridView tasksDataGridView;
         private DataGridViewTextBoxColumn taskName;
         private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Priority;
+        private DataGridViewCheckBoxColumn Status;
+        private DataGridViewCheckBoxColumn Priority;
         private DataGridViewTextBoxColumn dueDate;
+        private DataGridViewButtonColumn editTask;
     }
 }

@@ -23,14 +23,18 @@ technologie:
 
 
 do zrobienia:
-- design 					v
-- struktura jsona 				v
+- design 						v
+- struktura jsona 					v
 - funkcjonalność okna Main
-	- wyświetlanie zadań z jsona
-	- funkcjonalność przycisku Add A Task
+	- wyświetlanie zadań z jsona	
+		- kontrolki w odpowiednich kolumnach
+	- funkcja edytowania zadań	
+	- funkcjonalność przycisku Add A Task	
 	- filtrowanie
+		- dodać kontrolki
+		- funkcjonalność 
 - funkcjonalność okna AddTask
-	- uzupełnianie danych
+	- uzupełnianie danych (sprawdzanie poprawności)
 	- funkcjonalność przycisku Add
 	- funkcjonalność przycisku Cancel 
 

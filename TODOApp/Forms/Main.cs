@@ -38,6 +38,8 @@ namespace TODOApp.Forms
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
                         Task? task = JsonConvert.DeserializeObject<Task>(jobject[id.ToString()].ToString());
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
+                        
+
                         if (task != null)
                         {
                             CultureInfo ci = new CultureInfo("en-US");
