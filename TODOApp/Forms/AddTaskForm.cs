@@ -18,7 +18,7 @@ namespace TODOApp.Forms
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.mainForm.FillData();
+            //Program.mainForm.FillData();
         }
     }
 }

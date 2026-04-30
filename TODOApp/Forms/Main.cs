@@ -50,9 +50,14 @@ namespace TODOApp.Forms
                                 (
                                     task?.Name,
                                     task?.Description,
-                                    task?.Status,
-                                    task?.Priority,
+                                    //task?.Status,
+                                    this.tasksDataGridView.Columns[2].Selected = task?.Status == true ? true : false,
+                                    // TODO: Cross out the task name and description if the task is completed
+                                    this.tasksDataGridView.Columns[3].Selected = task?.Priority == true ? true : false,
+                                    // TODO: Put priority tasks at the top of the list
+                                    // TODO: Change the background color of the task row if the task is a priority task
                                     task?.DueDate?.ToString("MMMM dd yyyy", ci)
+                                // TODO: Change the background color of the task row if the task is overdue
                                 );
 #pragma warning restore CS8604 // Possible null reference argument.
                         }
@@ -65,6 +70,19 @@ namespace TODOApp.Forms
         {
             var addTaskForm = new AddTaskForm();
             addTaskForm.ShowDialog();
+        }
+
+        private void tasksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Edit button column index
+            if (e.ColumnIndex == 5)
+            {
+                MessageBox.Show("Cell edited: " + e.RowIndex + ", " + e.ColumnIndex);
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                MessageBox.Show("Cell deleted: " + e.RowIndex + ", " + e.ColumnIndex);
+            }
         }
     }
 }
