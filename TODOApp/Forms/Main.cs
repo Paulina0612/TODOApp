@@ -80,6 +80,21 @@ namespace TODOApp.Forms
             addTaskForm.ShowDialog();
         }
 
+        public void AddTask(Task newTask)
+        {
+            int newId = jobject != null ? jobject.Count : 0;
+
+            if (jobject != null)
+            {
+                jobject = handler.AddTask(jobject, newId, newTask);
+            }
+            else
+            {
+                MessageBox.Show("An error occurred while trying to add the task.");
+            }
+            FillData();
+        }
+
         private void tasksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Edit button column index

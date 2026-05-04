@@ -29,14 +29,14 @@ do zrobienia:
 	- wyświetlanie zadań z jsona			v
 		- kontrolki w odpowiednich kolumnach	v
 	- funkcja edytowania zadań			o
-	- funkcja usuwania zadań			o
+	- funkcja usuwania zadań			v
 	- funkcjonalność przycisku Add A Task		v
 	- filtrowanie
 		- dodać kontrolki
 		- funkcjonalność 
 - funkcjonalność okna AddTask
-	- uzupełnianie danych (sprawdzanie poprawności)	o
-	- funkcjonalność przycisku Add			
+	- uzupełnianie danych (sprawdzanie poprawności)	v
+	- funkcjonalność przycisku Add			o
 	- funkcjonalność przycisku Cancel 		v
 
 

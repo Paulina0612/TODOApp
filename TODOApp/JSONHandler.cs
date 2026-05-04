@@ -8,13 +8,17 @@ namespace TODOApp
 {
     internal class JSONHandler
     {
-        public JObject AddTask(JObject oldJson, Task newTask)
+        public JObject AddTask(JObject json, int id, Task newTask)
         {
-            JObject newJson = new JObject();
+            // Add the new task to the JSON object
+            json.Add(id.ToString(), JObject.FromObject(newTask));
 
-            // TODO: Add the new task to the old JSON object and return the updated JSON object
+            // Update the JSON file with the new JSON object
+            string jsonstr = json.ToString();
+            string fileName = "tasks.json";
+            File.WriteAllText(fileName, jsonstr);
 
-            return newJson;
+            return json;
         }
 
 
