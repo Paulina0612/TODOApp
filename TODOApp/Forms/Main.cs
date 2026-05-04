@@ -16,8 +16,12 @@ namespace TODOApp.Forms
 {
     public partial class Main : Form
     {
+        private JSONHandler handler;
+        private JObject? jobject;
+
         public Main()
         {
+            handler = new JSONHandler();
             InitializeComponent();
             FillData();
         }
@@ -28,7 +32,7 @@ namespace TODOApp.Forms
 
             StreamReader r = new StreamReader("tasks.json");
             string json = r.ReadToEnd();
-            var jobject = JObject.Parse(json);
+            jobject = JObject.Parse(json);
             int count = jobject.Count;
 
             if (jobject != null)
@@ -37,17 +41,19 @@ namespace TODOApp.Forms
                 {
                     if (jobject[id.ToString()] is not null)
                     {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                        #pragma warning disable CS8602 // Dereference of a possibly null reference.
                         Task? task = JsonConvert.DeserializeObject<Task>(jobject[id.ToString()].ToString());
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                        task?.Id = id;
+                        #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
 
                         if (task != null)
                         {
                             CultureInfo ci = new CultureInfo("en-US");
-#pragma warning disable CS8604 // Possible null reference argument.
+                            #pragma warning disable CS8604 // Possible null reference argument.
                             this.tasksDataGridView.Rows.Add
                                 (
+                                    task?.Id,
                                     task?.Name,
                                     task?.Description,
                                     //task?.Status,
@@ -59,11 +65,13 @@ namespace TODOApp.Forms
                                     task?.DueDate?.ToString("MMMM dd yyyy", ci)
                                 // TODO: Change the background color of the task row if the task is overdue
                                 );
-#pragma warning restore CS8604 // Possible null reference argument.
+                                #pragma warning restore CS8604 // Possible null reference argument.
                         }
                     }
                 }
             }
+
+            r.Close();
         }
 
         private void addTaskButton_Click(object sender, EventArgs e)
@@ -75,13 +83,18 @@ namespace TODOApp.Forms
         private void tasksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Edit button column index
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 MessageBox.Show("Cell edited: " + e.RowIndex + ", " + e.ColumnIndex);
             }
-            else if (e.ColumnIndex == 6)
+            else if (e.ColumnIndex == 7)
             {
-                MessageBox.Show("Cell deleted: " + e.RowIndex + ", " + e.ColumnIndex);
+                if (jobject != null)
+                {
+                    jobject = handler.RemoveTask(jobject, e.RowIndex);
+                    FillData();
+                }
+                else MessageBox.Show("An error occurred while trying to remove the task.");
             }
         }
     }

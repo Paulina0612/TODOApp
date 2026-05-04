@@ -26,16 +26,17 @@ do zrobienia:
 - design 						v
 - struktura jsona 					v
 - funkcjonalność okna Main
-	- wyświetlanie zadań z jsona	
-		- kontrolki w odpowiednich kolumnach
-	- funkcja edytowania zadań	
-	- funkcjonalność przycisku Add A Task	
+	- wyświetlanie zadań z jsona			v
+		- kontrolki w odpowiednich kolumnach	v
+	- funkcja edytowania zadań			o
+	- funkcja usuwania zadań			o
+	- funkcjonalność przycisku Add A Task		v
 	- filtrowanie
 		- dodać kontrolki
 		- funkcjonalność 
 - funkcjonalność okna AddTask
-	- uzupełnianie danych (sprawdzanie poprawności)
-	- funkcjonalność przycisku Add
-	- funkcjonalność przycisku Cancel 
+	- uzupełnianie danych (sprawdzanie poprawności)	o
+	- funkcjonalność przycisku Add			
+	- funkcjonalność przycisku Cancel 		v
 
 

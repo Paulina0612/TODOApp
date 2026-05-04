@@ -4,6 +4,7 @@ namespace TODOApp
 {
     public class Task
     {
+        public int? Id;
         public string? Name;
         public string? Description;
         public DateTime? DueDate;

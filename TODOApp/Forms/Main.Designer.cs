@@ -31,6 +31,7 @@
             titleLabel = new Label();
             addTaskButton = new Button();
             tasksDataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             taskName = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
             Status = new DataGridViewCheckBoxColumn();
@@ -65,13 +66,21 @@
             // tasksDataGridView
             // 
             tasksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tasksDataGridView.Columns.AddRange(new DataGridViewColumn[] { taskName, Description, Status, Priority, dueDate, editTask, Delete });
+            tasksDataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, taskName, Description, Status, Priority, dueDate, editTask, Delete });
             tasksDataGridView.Location = new Point(12, 111);
             tasksDataGridView.Name = "tasksDataGridView";
             tasksDataGridView.RowHeadersWidth = 51;
             tasksDataGridView.Size = new Size(1281, 456);
             tasksDataGridView.TabIndex = 2;
             tasksDataGridView.CellContentClick += tasksDataGridView_CellContentClick;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.Visible = false;
+            ID.Width = 125;
             // 
             // taskName
             // 
@@ -155,6 +164,7 @@
         private Label titleLabel;
         private Button addTaskButton;
         private DataGridView tasksDataGridView;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn taskName;
         private DataGridViewTextBoxColumn Description;
         private DataGridViewCheckBoxColumn Status;
